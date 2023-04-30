@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
 
 namespace SistemaControlAPI.Controllers
 {
@@ -77,6 +78,52 @@ namespace SistemaControlAPI.Controllers
             catch (Exception error)
             {
                 return ("erooor: " + error);
+            }
+        }
+
+        [HttpGet("Costos/Insert")]
+        public async Task<string> InsertCosto(string codigo, string descripcion)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosInsert?codigocentrocostos={codigo}&descripcioncentrocostos={descripcion}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("Error: " + error);
+            }
+        }
+
+        [HttpGet("Costos/Delete")]
+        public async Task<string> DeleteCostos(string codigo, string descripcion)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosDelete?codigocentrocostos={codigo}&descripcioncentrocostos={descripcion}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("Error: " + error);
             }
         }
 

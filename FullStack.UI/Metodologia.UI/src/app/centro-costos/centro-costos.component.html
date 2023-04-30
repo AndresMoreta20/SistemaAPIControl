@@ -1,6 +1,18 @@
 <app-header></app-header>
-<div class="vh-100 bg-dark text-white">
+<div class="h-100 bg-dark text-white p-5">
     <h1 cl>Centro de Costos</h1>
+    <div class="w-25">
+      <form>
+        <p>Nuevo costo:</p>
+        <label class="form-label">Código:</label>
+        <input class="form-control" [(ngModel)]="codigo" name="codigo">
+        <label class="form-label">Descripción:</label>
+        <input class="form-control" [(ngModel)]="descripcion" name="descripcion">
+        <button (click)="onInsert()" type="submit" class="btn btn-primary mt-2 mb-3">Insertar</button>
+      </form>
+
+    </div>
+    
     <table class="table table-dark table-striped">
         <thead>
             <tr >
@@ -13,6 +25,8 @@
             <tr *ngFor="let costo of costos" >
               <th scope="row">{{costo.Codigo}}</th>
               <th scope="row">{{costo.NombreCentroCostos}}</th>
+              <th scope="row"> <button mat-button class="bg-primary text-white border-0">Editar</button></th>
+              <th scope="row"> <button (click)="onDelete(costo.Codigo, costo.NombreCentroCostos)" mat-button class="bg-danger text-white border-0">Borrar</button></th>
               <td></td>
           
             </tr>
