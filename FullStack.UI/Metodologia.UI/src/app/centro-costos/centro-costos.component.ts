@@ -14,6 +14,7 @@ export class CentroCostosComponent {
   costos : any 
   codigo : string = "";
   descripcion: string = "";
+  nuevaDescripcion: string="";
   
     ngOnInit(){
     this.http.get("https://localhost:7036/api/GestionUsuario/Costos").subscribe((response)=>{
@@ -46,12 +47,19 @@ export class CentroCostosComponent {
       this.res = this.res[0];
       location.reload();
 
-
-
     });
   }
 
-  navigateToPageWithParams(param1: string, param2: number) {
-    this.router.navigate(['editar'], { queryParams: { param1, param2 } });
+  onUpdate(codigo: string, nuevaDescripcion: string) {
+    const url = 'https://localhost:7036/api/GestionUsuario/Costos/Update?codigo=' + codigo + '&nuevaDescripcion=' + nuevaDescripcion;
+  
+    this.http.get(url).subscribe(async (response) => {
+      this.res = response;
+      this.res = this.res[0];
+      location.reload();
+    });
   }
+  
+
+  
 }

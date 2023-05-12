@@ -126,6 +126,28 @@ namespace SistemaControlAPI.Controllers
                 return ("Error: " + error);
             }
         }
+        [HttpGet("Costos/Update")]
+        public async Task<string> UpdateCostos(string codigo, string nuevaDescripcion)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosUpdate?codigocentrocostos={codigo}&descripcioncentrocostos={nuevaDescripcion}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("Error: " + error);
+            }
+        }
 
     }
 }

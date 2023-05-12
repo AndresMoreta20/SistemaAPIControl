@@ -34,11 +34,8 @@
                   
                     <form>
                       <p>Editar costo:</p>
-                      <label class="form-label">Código:</label>
-                      <input class="form-control" [(ngModel)]="codigo" name="codigo" placeholder="{{costo.Codigo}}">
-                      <label class="form-label">Descripción:</label>
-                      <input class="form-control" [(ngModel)]="descripcion" name="descripcion"  placeholder="{{costo.NombreCentroCostos}}">
-                      <button (click)="onInsert()" type="submit" class="btn btn-primary mt-2 mb-3">Insertar</button>
+                      <input class="form-control" [(ngModel)]="nuevaDescripcion" name="nuevaDescripcion"  placeholder="{{costo.NombreCentroCostos}}">
+                      <button (click)="onUpdate(costo.Codigo, nuevaDescripcion)" type="submit" class="btn btn-primary mt-2 mb-3">Editar</button>
                     </form>
                   
                 </div>
