@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-centro-costos',
@@ -8,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CentroCostosComponent {
   res: any;
-  constructor(private http: HttpClient){};
-
+  constructor(private http: HttpClient, private router: Router){};
+ 
   costos : any 
   codigo : string = "";
   descripcion: string = "";
@@ -48,5 +49,9 @@ export class CentroCostosComponent {
 
 
     });
+  }
+
+  navigateToPageWithParams(param1: string, param2: number) {
+    this.router.navigate(['editar'], { queryParams: { param1, param2 } });
   }
 }

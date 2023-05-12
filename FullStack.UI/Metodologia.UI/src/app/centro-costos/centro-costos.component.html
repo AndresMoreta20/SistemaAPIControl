@@ -22,10 +22,28 @@
             </tr>
           </thead>
           <tbody [(ngModel)]="costos">
-            <tr *ngFor="let costo of costos" >
+            <tr *ngFor="let costo of costos; let i = index" >
               <th scope="row">{{costo.Codigo}}</th>
               <th scope="row">{{costo.NombreCentroCostos}}</th>
-              <th scope="row"> <button mat-button class="bg-primary text-white border-0">Editar</button></th>
+              <th scope="row"> 
+                <button   class="bg-primary text-white border-0" type="button" data-bs-toggle="collapse"   [attr.data-bs-toggle]="'collapse'"
+                [attr.data-bs-target]="'#collapseExample-' + i" aria-expanded="false" aria-controls="collapseExample">
+                  Editar
+                </button>
+                <div class="collapse" [attr.id]="'collapseExample-' + i">
+                  
+                    <form>
+                      <p>Editar costo:</p>
+                      <label class="form-label">Código:</label>
+                      <input class="form-control" [(ngModel)]="codigo" name="codigo" placeholder="{{costo.Codigo}}">
+                      <label class="form-label">Descripción:</label>
+                      <input class="form-control" [(ngModel)]="descripcion" name="descripcion"  placeholder="{{costo.NombreCentroCostos}}">
+                      <button (click)="onInsert()" type="submit" class="btn btn-primary mt-2 mb-3">Insertar</button>
+                    </form>
+                  
+                </div>
+              </th>
+
               <th scope="row"> <button (click)="onDelete(costo.Codigo, costo.NombreCentroCostos)" mat-button class="bg-danger text-white border-0">Borrar</button></th>
               <td></td>
           
