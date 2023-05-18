@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +16,10 @@ import { LoginComponent } from './login/login/login.component';
 import { CentroCostosComponent } from './centro-costos/centro-costos.component';
 import { HeaderComponent } from './header/header.component';
 import { EditarCostoComponent } from './editar-costo/editar-costo.component';
+import { ModalComponent } from './modal/modal.component';
+import { ModalAlertComponent } from './modal-alert/modal-alert.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { FormPopUpComponent } from './form-pop-up/form-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +28,21 @@ import { EditarCostoComponent } from './editar-costo/editar-costo.component';
     AppComponent,
     CentroCostosComponent,
     HeaderComponent,
-    EditarCostoComponent
-
+    EditarCostoComponent,
+    ModalComponent,
+    ModalAlertComponent,
+    FormPopUpComponent
   ],
   imports: [
     FormsModule,  
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatIconModule,
+    MatDialogModule,
+    SweetAlert2Module.forRoot(),
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
