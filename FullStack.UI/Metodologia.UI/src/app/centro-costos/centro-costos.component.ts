@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import { FormPopUpComponent } from '../form-pop-up/form-pop-up.component';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-centro-costos',
@@ -52,8 +54,27 @@ export class CentroCostosComponent {
 
     });
   }
-
   onDelete(codigo: string, descripcion: string) {
+    this.showAlert((userConfirmed: boolean) => {
+      if (userConfirmed) {
+        const url = `https://localhost:7036/api/GestionUsuario/Costos/Delete?codigo=${codigo}&descripcion=${descripcion}`;
+  
+        this.http.get(url).subscribe(async (response) => {
+          this.res = response;
+          this.res = this.res[0];
+          location.reload();
+        });
+      } else {
+        // User cancelled the action or dismissed the alert
+        // Handle accordingly or exit the function
+        return;
+      }
+    });
+  }
+/*
+  onDelete(codigo: string, descripcion: string) {
+
+
     const url = 'https://localhost:7036/api/GestionUsuario/Costos/Delete?codigo=' + codigo + '&descripcion=' + descripcion;
 
     this.http.get(url).subscribe(async (response) => {
@@ -64,7 +85,7 @@ export class CentroCostosComponent {
       location.reload();
 
     });
-  }
+  }*/
 
   onUpdate(codigo: string, nuevaDescripcion: string) {
     const url = 'https://localhost:7036/api/GestionUsuario/Costos/Update?codigo=' + codigo + '&nuevaDescripcion=' + nuevaDescripcion;
@@ -77,6 +98,9 @@ export class CentroCostosComponent {
   }
 
   onSearch(descripcioncentrocostos: string) {
+
+    
+    
     const url = `https://localhost:7036/api/GestionUsuario/Costos/Search?descripcioncentrocostos=${descripcioncentrocostos}`;
     
     this.http.get(url).subscribe(async (response) => {
@@ -87,6 +111,26 @@ export class CentroCostosComponent {
       // Aquí puedes hacer lo que necesites con la respuesta
     });
   }
+  
+  showAlert(callback: (confirmed: boolean) => void): void {
+    Swal.fire({
+      title: 'Alerta!',
+      text: '¿Estás seguro de que quieres borrar el costo?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        callback(true);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        console.log('Cancelled');
+        callback(false);
+      }
+    });
+  }
+  
   
   
 
