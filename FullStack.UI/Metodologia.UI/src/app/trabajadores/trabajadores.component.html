@@ -1,18 +1,99 @@
 <app-header></app-header>
-
+<button (click)="onButton()">Puebla tabla</button>
 <table class="table table-striped">
     <thead>
       <tr>
-        <th>Campo</th>
-        <th>Valor</th>
+        <th>COMP_Codigo</th>
+      <th>Id_Trabajador</th>
+      <th>Tipo_trabajador</th>
+      <th>Apellido_Paterno</th>
+      <th>Apellido_Materno</th>
+      <th>Nombres</th>
+      <th>Identificacion</th>
+      <th>Entidad_Bancaria</th>
+      <th>CarnetIESS</th>
+      <th>Direccion</th>
+      <th>Telefono_Fijo</th>
+      <th>Telefono_Movil</th>
+      <th>Genero</th>
+      <th>Nro_Cuenta_Bancaria</th>
+      <th>Codigo_Categoria_Ocupacion</th>
+      <th>Ocupacion</th>
+      <th>Centro_Costos</th>
+      <th>Nivel_Salarial</th>
+      <th>EstadoTrabajador</th>
+      <th>Tipo_Contrato</th>
+      <th>Tipo_Cese</th>
+      <th>EstadoCivil</th>
+      <th>TipodeComision</th>
+      <th>FechaNacimiento</th>
+      <th>FechaIngreso</th>
+      <th>FechaCese</th>
+      <th>PeriododeVacaciones</th>
+      <th>FechaReingreso</th>
+      <th>Fecha_Ult_Actualizacion</th>
+      <th>EsReingreso</th>
+      <th>BancoCTA_CTE</th>
+      <th>Tipo_Cuenta</th>
+      <th>RSV_Indem_Acumul</th>
+      <th>Año_Ult_Rsva_Indemni</th>
+      <th>Mes_Ult_Rsva_Indemni</th>
+      <th>FormaCalculo13ro</th>
+      <th>FormaCalculo14ro</th>
+      <th>BoniComplementaria</th>
+      <th>BoniEspecial</th>
+      <th>Remuneracion_Minima</th>
+      <th>CuotaCuentaCorriente</th>
+      <th>Fondo_Reserva</th>
+      <th>Mensaje</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of data">
-        <td>{{ item.campo }}</td>
-        <td>{{ item.valor }}</td>
+      <tr >
+        <td>{{ arregloObjetos.COMP_Codigo }}</td>
+      <td>{{ arregloObjetos.Id_Trabajador }}</td>
+      <td>{{ arregloObjetos.Tipo_trabajador }}</td>
+      <td>{{ arregloObjetos.Apellido_Paterno }}</td>
+      <td>{{ arregloObjetos.Apellido_Materno }}</td>
+      <td>{{ arregloObjetos.Nombres }}</td>
+      <td>{{ arregloObjetos.Identificacion }}</td>
+      <td>{{ arregloObjetos.Entidad_Bancaria }}</td>
+      <td>{{ arregloObjetos.CarnetIESS }}</td>
+      <td>{{ arregloObjetos.Direccion }}</td>
+      <td>{{ arregloObjetos.Telefono_Fijo }}</td>
+      <td>{{ arregloObjetos.Telefono_Movil }}</td>
+      <td>{{ arregloObjetos.Genero }}</td>
+      <td>{{ arregloObjetos.Nro_Cuenta_Bancaria }}</td>
+        <td>{{ arregloObjetos.Codigo_Categoria_Ocupacion }}</td>
+      <td>{{ arregloObjetos.Ocupacion }}</td>
+      <td>{{ arregloObjetos.Centro_Costos }}</td>
+      <td>{{ arregloObjetos.Nivel_Salarial }}</td>
+      <td>{{ arregloObjetos.EstadoTrabajador }}</td>
+      <td>{{ arregloObjetos.Tipo_Contrato }}</td>
+      <td>{{ arregloObjetos.Tipo_Cese }}</td>
+      <td>{{ arregloObjetos.EstadoCivil }}</td>
+      <td>{{ arregloObjetos.TipodeComision }}</td>
+      <td>{{ arregloObjetos.FechaNacimiento }}</td>
+      <td>{{ arregloObjetos.FechaIngreso }}</td>
+      <td>{{ arregloObjetos.FechaCese }}</td>
+      <td>{{ arregloObjetos.PeriododeVacaciones }}</td>
+      <td>{{ arregloObjetos.FechaReingreso }}</td>
+      <td>{{ arregloObjetos.Fecha_Ult_Actualizacion }}</td>
+      <td>{{ arregloObjetos.EsReingreso }}</td>
+      <td>{{ arregloObjetos.BancoCTA_CTE }}</td>
+      <td>{{ arregloObjetos.Tipo_Cuenta }}</td>
+      <td>{{ arregloObjetos.RSV_Indem_Acumul }}</td>
+      <td>{{ arregloObjetos.Ano_Ult_Rsva_Indemni }}</td>
+      <td>{{ arregloObjetos.Mes_Ult_Rsva_Indemni }}</td>
+      <td>{{ arregloObjetos.FormaCalculo13ro }}</td>
+      <td>{{ arregloObjetos.FormaCalculo14ro }}</td>
+      <td>{{ arregloObjetos.BoniComplementaria }}</td>
+      <td>{{ arregloObjetos.BoniEspecial }}</td>
+      <td>{{ arregloObjetos.Remuneracion_Minima }}</td>
+      <td>{{ arregloObjetos.CuotaCuentaCorriente }}</td>
+      <td>{{ arregloObjetos.Fondo_Reserva }}</td>
+      <td>{{ arregloObjetos.Mensaje }}</td>
       </tr>
     </tbody>
   </table>
-  <button (click)="onButton()">Oprimir</button>
   

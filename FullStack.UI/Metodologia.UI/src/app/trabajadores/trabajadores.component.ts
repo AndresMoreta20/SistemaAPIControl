@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./trabajadores.component.css']
 })
 export class TrabajadoresComponent {
+  arregloObjetos: any;
   res: any;
   resultado: any;
   emisorCodigo: string = "";
@@ -33,7 +34,7 @@ export class TrabajadoresComponent {
   }
 
   onButton(){
-    console.log(this.emisorCodigo);
+    console.log(this.emisorCodigo[2]);
     this.onSearch();
   }
 
@@ -45,6 +46,7 @@ export class TrabajadoresComponent {
       this.res = this.res[0];
       this.resultado = this.res[0];
       console.log(this.res);
+      this.arregloObjetos = this.res;
   
       // Ejemplo de uso del resultado
      
