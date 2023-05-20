@@ -11,7 +11,12 @@
         <label for="descripcion" class="form-label">Descripción:</label>
         <input type="text" id="descripcion" name="descripcion" class="form-control" [(ngModel)]="formData.descripcion" required>
       </div>
-      <button class="btn btn-primary" (click)="onInsert(); closeModal();" type="submit">Enviar</button>
+      <div style="display: flex; justify-content: space-between;">
+        <button class="btn btn-primary mr-2" (click)="onInsert(); closeModal();" type="submit">Enviar</button>
+        <button class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+  
+      </div>
+      
     </form>
   </div>
 </div>

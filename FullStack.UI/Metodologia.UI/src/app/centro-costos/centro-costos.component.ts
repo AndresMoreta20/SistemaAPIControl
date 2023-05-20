@@ -26,12 +26,19 @@ export class CentroCostosComponent {
   resultado: string="";
 
   showFormPopup = false;
+  showEditForm = false;
 
   openFormPopup() {
     this.showFormPopup = true;
   }
   closeFormPopup() {
     this.showFormPopup = false;
+  }
+  openEditForm() {
+    this.showEditForm = true;
+  }
+  closeEditForm() {
+    this.showEditForm = false;
   }
   
     ngOnInit(){

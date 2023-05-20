@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SharedService } from 'src/app/shared.service';
 
+
 @Component({
   selector: 'app-trabajadores',
   templateUrl: './trabajadores.component.html',
