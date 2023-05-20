@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.campo }}</td>
+        <td>{{ item.valor }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="onButton()">Oprimir</button>
+  

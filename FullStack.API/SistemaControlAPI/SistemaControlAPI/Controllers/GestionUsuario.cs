@@ -172,6 +172,29 @@ namespace SistemaControlAPI.Controllers
             }
         }
 
+        [HttpGet("Trabajador/Search")]
+        public async Task<string> SearchTrabajador(int sucursal)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/TrabajadorSelect?sucursal={sucursal}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("Error: " + error);
+            }
+        }
+
 
 
     }

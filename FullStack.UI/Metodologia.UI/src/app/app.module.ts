@@ -20,6 +20,7 @@ import { ModalComponent } from './modal/modal.component';
 import { ModalAlertComponent } from './modal-alert/modal-alert.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { FormPopUpComponent } from './form-pop-up/form-pop-up.component';
+import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormPopUpComponent } from './form-pop-up/form-pop-up.component';
     EditarCostoComponent,
     ModalComponent,
     ModalAlertComponent,
-    FormPopUpComponent
+    FormPopUpComponent,
+    TrabajadoresComponent
   ],
   imports: [
     FormsModule,  
