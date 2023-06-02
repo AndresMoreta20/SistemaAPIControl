@@ -85,6 +85,8 @@ export class LoginComponent {
         }
         if (this.res.OBSERVACION == "INGRESO EXITOSO") {
           this.labelValue = "INGRESO EXITOSO";
+          this.storeData();
+          this.retrieveData();
           this.sharedService.emisorCodigo = this.emisor.Codigo;
           this.router.navigate(['/trabajadores']);
 
@@ -110,6 +112,20 @@ export class LoginComponent {
       this.emisores = response;
       console.log("Emisores: ", this.emisores);
     });
+  }
+
+  storeData() {
+    window.sessionStorage.setItem('Codigo', this.emisor.Codigo);
+  
+  }
+
+  retrieveData() {
+    const codigo = window.sessionStorage.getItem('Codigo');
+    console.log(codigo);
+  }
+
+  clearData() {
+    window.sessionStorage.removeItem('nombre');
   }
 
 }

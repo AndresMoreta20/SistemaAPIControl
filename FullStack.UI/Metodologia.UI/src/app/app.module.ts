@@ -22,6 +22,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { FormPopUpComponent } from './form-pop-up/form-pop-up.component';
 import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
 import { FormEditComponent } from './form-edit/form-edit.component';
+import {CookieService} from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { FormEditComponent } from './form-edit/form-edit.component';
     SweetAlert2Module.forRoot(),
   
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

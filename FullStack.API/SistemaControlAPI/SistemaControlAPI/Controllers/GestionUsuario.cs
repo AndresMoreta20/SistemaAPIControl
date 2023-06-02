@@ -16,6 +16,7 @@ namespace SistemaControlAPI.Controllers
             _logger = logger;
         }
 
+        
         [HttpGet(Name = "getUser")]
 
         public async Task<string> Get(string usuario, string password)
@@ -37,7 +38,39 @@ namespace SistemaControlAPI.Controllers
                 return ("erooor: " + error);
             }
         }
+        /*
+        [HttpGet(Name = "getUser")]
+        public async Task<string> Get(string usuario, string password)
+        {
+            try
+            {
+                var baseUri = new Uri("http://apiservicios.ecuasolmovsa.com:3009/api/Usuarios");
+                var queryParameters = HttpUtility.ParseQueryString(string.Empty);
+                queryParameters["usuario"] = usuario;
+                queryParameters["password"] = password;
+                var fullUri = new Uri(baseUri, "?" + queryParameters.ToString());
+                var url = fullUri.ToString();
 
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+
+                    var responseBody = await response.Content.ReadAsStringAsync();
+                    var responseObject = JsonConvert.DeserializeObject<UsuarioResponse>(responseBody);
+
+                    // Aquí puedes realizar las acciones necesarias con el objeto responseObject
+
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return "error: " + error.Message;
+            }
+        }
+
+        */
         [HttpGet("Emisores")]
 
         public async Task<string> Get()

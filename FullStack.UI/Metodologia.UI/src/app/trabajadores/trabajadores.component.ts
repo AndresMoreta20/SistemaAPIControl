@@ -20,7 +20,7 @@ export class TrabajadoresComponent {
 
   
   ngOnInit(): void {
-
+    this.retrieveData();
     this.emisorCodigo = this.sharedService.emisorCodigo;
   
    this.onSearch();
@@ -34,7 +34,7 @@ export class TrabajadoresComponent {
   }
 
   onSearch() {
-    const url = `https://localhost:7036/api/GestionUsuario/Trabajador/Search?sucursal=${this.emisorCodigo}`;
+    const url = `https://localhost:7036/api/GestionUsuario/Trabajador/Search?sucursal=${window.sessionStorage.getItem('Codigo')}`;
   
     this.http.get(url).subscribe(async (response) => {
     //  console.log(response);
@@ -49,4 +49,10 @@ export class TrabajadoresComponent {
      
     });
   }
+
+  retrieveData() {
+    const codigo = window.sessionStorage.getItem('Codigo');
+    console.log(codigo);
+  }
+
 }
