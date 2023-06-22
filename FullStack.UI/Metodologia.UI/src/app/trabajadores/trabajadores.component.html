@@ -1,0 +1,293 @@
+<app-header></app-header>
+
+<app-form-pop-up-trabajadores *ngIf="showFormPopup" (closeModalEvent)="closeFormPopup()"></app-form-pop-up-trabajadores>
+
+<!--<button (click)="onButton()">Puebla tabla</button>-->
+
+<!-- <div>   //Boton agregar orifinal
+    <button (click)="openFormPopup()"
+        style="background-color: rgba(0, 208, 255, 0.8); color: white; border: none; border-radius: 4px; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease;">Agregar</button>
+</div> -->
+
+<div style="position: relative;">
+    <div
+        style="position: absolute; top: 50%; left: 0; width: 100%; height: 100%; transform: translateY(-50%); background-color: black; opacity: 0.5; z-index: -1;">
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+        <button (click)="openFormPopup()"
+            style="background-color: rgba(0, 208, 255, 0.8); color: white; border: none; border-radius: 4px; padding: 8px 16px; text-align: center; text-decoration: none; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; width: 200px;">Agregar</button>
+    </div>
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>COMP_Codigo</th>
+            <th>Id_Trabajador</th>
+            <th>Tipo_trabajador</th>
+            <th>Apellido_Paterno</th>
+            <th>Apellido_Materno</th>
+            <th>Nombres</th>
+            <th>Identificacion</th>
+            <th>Entidad_Bancaria</th>
+            <th>CarnetIESS</th>
+            <th>Direccion</th>
+            <th>Telefono_Fijo</th>
+            <th>Telefono_Movil</th>
+            <th>Genero</th>
+            <th>Nro_Cuenta_Bancaria</th>
+            <th>Codigo_Categoria_Ocupacion</th>
+            <th>Ocupacion</th>
+            <th>Centro_Costos</th>
+            <th>Nivel_Salarial</th>
+            <th>EstadoTrabajador</th>
+            <th>Tipo_Contrato</th>
+            <th>Tipo_Cese</th>
+            <th>EstadoCivil</th>
+            <th>TipodeComision</th>
+            <th>FechaNacimiento</th>
+            <th>FechaIngreso</th>
+            <th>FechaCese</th>
+            <th>PeriododeVacaciones</th>
+            <th>FechaReingreso</th>
+            <th>Fecha_Ult_Actualizacion</th>
+            <th>EsReingreso</th>
+            <th>BancoCTA_CTE</th>
+            <th>Tipo_Cuenta</th>
+            <th>RSV_Indem_Acumul</th>
+            <th>Año_Ult_Rsva_Indemni</th>
+            <th>Mes_Ult_Rsva_Indemni</th>
+            <th>FormaCalculo13ro</th>
+            <th>FormaCalculo14ro</th>
+            <th>BoniComplementaria</th>
+            <th>BoniEspecial</th>
+            <th>Remuneracion_Minima</th>
+            <th>CuotaCuentaCorriente</th>
+            <th>Fondo_Reserva</th>
+            <th>Mensaje</th>
+            <th>Edicion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor="let objeto of arregloObjetos"> -->
+        <tr *ngFor="let objeto of arregloObjetos; let i = index">
+            <td>{{ objeto.COMP_Codigo }}</td>
+            <td>{{ objeto.Id_Trabajador }}</td>
+            <td>{{ objeto.Tipo_trabajador }}</td>
+            <td>{{ objeto.Apellido_Paterno }}</td>
+            <td>{{ objeto.Apellido_Materno }}</td>
+            <td>{{ objeto.Nombres }}</td>
+            <td>{{ objeto.Identificacion }}</td>
+            <td>{{ objeto.Entidad_Bancaria }}</td>
+            <td>{{ objeto.CarnetIESS }}</td>
+            <td>{{ objeto.Direccion }}</td>
+            <td>{{ objeto.Telefono_Fijo }}</td>
+            <td>{{ objeto.Telefono_Movil }}</td>
+            <td>{{ objeto.Genero}}</td>
+            <td>{{ objeto.Nro_Cuenta_Bancaria }}</td>
+            <td>{{ objeto.Codigo_Categoria_Ocupacion }}</td>
+            <td>{{ objeto.Ocupacion }}</td>
+            <td>{{ objeto.Centro_Costos }}</td>
+            <td>{{ objeto.Nivel_Salarial }}</td>
+            <td>{{ objeto.EstadoTrabajador }}</td>
+            <td>{{ objeto.Tipo_Contrato }}</td>
+            <td>{{ objeto.Tipo_Cese }}</td>
+            <td>{{ objeto.EstadoCivil }}</td>
+            <td>{{ objeto.TipodeComision }}</td>
+            <td>{{ objeto.FechaNacimiento }}</td>
+            <td>{{ objeto.FechaIngreso }}</td>
+            <td>{{ objeto.FechaCese }}</td>
+            <td>{{ objeto.PeriododeVacaciones }}</td>
+            <td>{{ objeto.FechaReingreso }}</td>
+            <td>{{ objeto.Fecha_Ult_Actualizacion }}</td>
+            <td>{{ objeto.EsReingreso }}</td>
+            <td>{{ objeto.BancoCTA_CTE }}</td>
+            <td>{{ objeto.Tipo_Cuenta }}</td>
+            <td>{{ objeto.RSV_Indem_Acumul }}</td>
+            <td>{{ objeto.Ano_Ult_Rsva_Indemni }}</td>
+            <td>{{ objeto.Mes_Ult_Rsva_Indemni }}</td>
+            <td>{{ objeto.FormaCalculo13ro }}</td>
+            <td>{{ objeto.FormaCalculo14ro }}</td>
+            <td>{{ objeto.BoniComplementaria }}</td>
+            <td>{{ objeto.BoniEspecial }}</td>
+            <td>{{ objeto.Remuneracion_Minima }}</td>
+            <td>{{ objeto.CuotaCuentaCorriente }}</td>
+            <td>{{ objeto.Fondo_Reserva }}</td>
+            <td>{{ objeto.Mensaje }}</td>
+            <td>
+                <!-- <button (click)="modificarRegistro(objeto)"
+                    style="background-color: #2ECC71; color: white; border: none; border-radius: 4px; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; width: 100px;">Modificar</button>
+
+                <button (click)="borrarRegistro(objeto)"
+                    style="background-color: #E74C3C; color: white; border: none; border-radius: 4px; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; width: 100px;">Borrar</button> -->
+
+
+                <button (click)="openEditForm(objeto, i)"
+                    style="background-color: #2ECC71; color: white; border: none; border-radius: 4px; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; width: 100px;">Modificar</button>
+                <button (click)="borrarRegistro(objeto)"
+                    style="background-color: #E74C3C; color: white; border: none; border-radius: 4px; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; width: 100px;">Borrar</button>
+
+                <ng-container *ngIf="selectedRowIndex === i">
+                    <div class="edit-form">
+                        <h3>Modificar Datos Trabajador</h3>
+                        <div>
+                            <label for="tipoTrabajador">Nuevo Tipo de Trabajador:</label>
+                            <input type="text" id="tipoTrabajador" [(ngModel)]="tipo_trabajadorModificado" />
+                        </div>
+                        <div>
+                            <label for="apellidoPaterno">Nuevo Apellido Paterno:</label>
+                            <input type="text" id="apellidoPaterno" [(ngModel)]="apellido_PaternoModificado" />
+                        </div>
+                        <div>
+                            <label for="apellidoMaterno">Nuevo Apellido Materno:</label>
+                            <input type="text" id="apellidoMaterno" [(ngModel)]="apellido_MaternoModificado" />
+                        </div>
+                        <div>
+                            <label for="nombres">Nuevos Nombres:</label>
+                            <input type="text" id="nombres" [(ngModel)]="nombresModificado" />
+                        </div>
+                        <div>
+                            <label for="identificacion">Nueva Identificación:</label>
+                            <input type="text" id="identificacion" [(ngModel)]="identificacionModificado" />
+                        </div>
+                        <div>
+                            <label for="entidadBancaria">Nueva Entidad Bancaria:</label>
+                            <input type="text" id="entidadBancaria" [(ngModel)]="entidad_BancariaModificado" />
+                        </div>
+                        <div>
+                            <label for="carnetIESS">Nuevo Carnet IESS:</label>
+                            <input type="text" id="carnetIESS" [(ngModel)]="carnetIESSModificado" />
+                        </div>
+                        <div>
+                            <label for="direccion">Nueva Dirección:</label>
+                            <input type="text" id="direccion" [(ngModel)]="direccionModificado" />
+                        </div>
+                        <div>
+                            <label for="telefonoFijo">Nuevo Teléfono Fijo:</label>
+                            <input type="text" id="telefonoFijo" [(ngModel)]="telefono_FijoModificado" />
+                        </div>
+                        <div>
+                            <label for="telefonoMovil">Nuevo Teléfono Móvil:</label>
+                            <input type="text" id="telefonoMovil" [(ngModel)]="telefono_MovilModificado" />
+                        </div>
+                        <div>
+                            <label for="genero">Nuevo Género:</label>
+                            <input type="text" id="genero" [(ngModel)]="generoModificado" />
+                        </div>
+                        <div>
+                            <label for="nroCuentaBancaria">Nuevo Número de Cuenta Bancaria:</label>
+                            <input type="text" id="nroCuentaBancaria" [(ngModel)]="nro_Cuenta_BancariaModificado" />
+                        </div>
+                        <div>
+                            <label for="codigoCategoriaOcupacion">Nuevo Código de Categoría de Ocupación:</label>
+                            <input type="text" id="codigoCategoriaOcupacion"
+                                [(ngModel)]="codigo_Categoria_OcupacionModificado" />
+                        </div>
+                        <div>
+                            <label for="ocupacion">Nueva Ocupación:</label>
+                            <input type="text" id="ocupacion" [(ngModel)]="ocupacionModificado" />
+                        </div>
+                        <div>
+                            <label for="centroCostos">Nuevo Centro de Costos:</label>
+                            <input type="text" id="centroCostos" [(ngModel)]="centro_CostosModificado" />
+                        </div>
+                        <div>
+                            <label for="nivelSalarial">Nuevo Nivel Salarial:</label>
+                            <input type="text" id="nivelSalarial" [(ngModel)]="nivel_SalarialModificado" />
+                        </div>
+                        <div>
+                            <label for="estadoTrabajador">Nuevo Estado del Trabajador:</label>
+                            <input type="text" id="estadoTrabajador" [(ngModel)]="estadoTrabajadorModificado" />
+                        </div>
+                        <div>
+                            <label for="tipoContrato">Nuevo Tipo de Contrato:</label>
+                            <input type="text" id="tipoContrato" [(ngModel)]="tipo_ContratoModificado" />
+                        </div>
+                        <div>
+                            <label for="tipoCese">Nuevo Tipo de Cese:</label>
+                            <input type="text" id="tipoCese" [(ngModel)]="tipo_CeseModificado" />
+                        </div>
+                        <div>
+                            <label for="estadoCivil">Nuevo Estado Civil:</label>
+                            <input type="text" id="estadoCivil" [(ngModel)]="estadoCivilModificado" />
+                        </div>
+                        <div>
+                            <label for="tipoComision">Nuevo Tipo de Comisión:</label>
+                            <input type="text" id="tipoComision" [(ngModel)]="tipodeComisionModificado" />
+                        </div>
+                        <div>
+                            <label for="fechaNacimiento">Nueva Fecha de Nacimiento:</label>
+                            <input type="text" id="fechaNacimiento" [(ngModel)]="fechaNacimientoModificado" />
+                        </div>
+                        <div>
+                            <label for="fechaIngreso">Nueva Fecha de Ingreso:</label>
+                            <input type="text" id="fechaIngreso" [(ngModel)]="fechaIngresoModificado" />
+                        </div>
+                        <div>
+                            <label for="fechaCese">Nueva Fecha de Cese:</label>
+                            <input type="text" id="fechaCese" [(ngModel)]="fechaCeseModificado" />
+                        </div>
+                        <div>
+                            <label for="periodoVacaciones">Nuevo Período de Vacaciones:</label>
+                            <input type="number" id="periodoVacaciones" [(ngModel)]="periododeVacacionesModificado" />
+                        </div>
+                        <div>
+                            <label for="fechaReingreso">Nueva Fecha de Reingreso:</label>
+                            <input type="text" id="fechaReingreso" [(ngModel)]="fechaReingresoModificado" />
+                        </div>
+                        <div>
+                            <label for="fechaUltimaActualizacion">Nueva Fecha de Última Actualización:</label>
+                            <input type="text" id="fechaUltimaActualizacion"
+                                [(ngModel)]="fecha_Ult_ActualizacionModificado" />
+                        </div>
+                        <div>
+                            <label for="esReingreso">Nuevo Estado de Reingreso:</label>
+                            <input type="text" id="esReingreso" [(ngModel)]="esReingresoModificado" />
+                        </div>
+                        <div>
+                            <label for="tipoCuenta">Nuevo Tipo de Cuenta:</label>
+                            <input type="text" id="tipoCuenta" [(ngModel)]="tipo_CuentaModificado" />
+                        </div>
+                        <div>
+                            <label for="formaCalculo13ro">Nueva Forma de Cálculo del 13vo Salario:</label>
+                            <input type="number" id="formaCalculo13ro" [(ngModel)]="formaCalculo13roModificado" />
+                        </div>
+                        <div>
+                            <label for="formaCalculo14ro">Nueva Forma de Cálculo del 14vo Salario:</label>
+                            <input type="number" id="formaCalculo14ro" [(ngModel)]="formaCalculo14roModificado" />
+                        </div>
+                        <div>
+                            <label for="boniComplementaria">Nueva Bonificación Complementaria:</label>
+                            <input type="number" id="boniComplementaria" [(ngModel)]="boniComplementariaModificado" />
+                        </div>
+                        <div>
+                            <label for="boniEspecial">Nueva Bonificación Especial:</label>
+                            <input type="number" id="boniEspecial" [(ngModel)]="boniEspecialModificado" />
+                        </div>
+                        <div>
+                            <label for="remuneracionMinima">Nueva Remuneración Mínima:</label>
+                            <input type="number" id="remuneracionMinima" [(ngModel)]="remuneracion_MinimaModificado" />
+                        </div>
+                        <div>
+                            <label for="fondoReserva">Nuevo Fondo de Reserva:</label>
+                            <input type="text" id="fondoReserva" [(ngModel)]="fondo_ReservaModificado" />
+                        </div>
+                        <div>
+                            <label for="mensaje">Nuevo Mensaje:</label>
+                            <input type="text" id="mensaje" [(ngModel)]="mensajeModificado" />
+                        </div>
+
+                        <div>
+                            <button
+                                (click)="modificarTrabajador(objeto, tipo_trabajadorModificado, apellido_PaternoModificado, apellido_MaternoModificado, nombresModificado, identificacionModificado, entidad_BancariaModificado, carnetIESSModificado, direccionModificado, telefono_FijoModificado, telefono_MovilModificado, generoModificado, nro_Cuenta_BancariaModificado, codigo_Categoria_OcupacionModificado, ocupacionModificado, centro_CostosModificado, nivel_SalarialModificado, estadoTrabajadorModificado, tipo_ContratoModificado, tipo_CeseModificado, estadoCivilModificado, tipodeComisionModificado, fechaNacimientoModificado, fechaIngresoModificado, fechaCeseModificado, periododeVacacionesModificado, fechaReingresoModificado, fecha_Ult_ActualizacionModificado, esReingresoModificado, tipo_CuentaModificado, formaCalculo13roModificado, formaCalculo14roModificado, boniComplementariaModificado, boniEspecialModificado, remuneracion_MinimaModificado, fondo_ReservaModificado, mensajeModificado)">Guardar</button>
+                            <button (click)="closeEditForm()">Cancelar</button>
+                        </div>
+
+                    </div>
+                </ng-container>
+            </td>
+        </tr>
+    </tbody>
+</table>

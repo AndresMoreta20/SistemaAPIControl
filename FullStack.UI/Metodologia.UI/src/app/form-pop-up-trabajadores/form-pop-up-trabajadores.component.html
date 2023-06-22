@@ -1,0 +1,206 @@
+<div class="vh-80 vw-100 d-flex justify-content-center align-items-center" style="z-index: 2; position: absolute; color: black;">
+  <div class="bg-white p-4 rounded" style="max-width: 600px;">
+    <h2 class="mb-4">Form Popup</h2>
+    <form (ngSubmit)="submitForm()" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+      <!-- Add your form fields here -->
+
+      <div class="mb-3">
+  <label for="COMP_Codigo" class="form-label">COMP_Codigo:</label>
+  <input type="text" id="COMP_Codigo" name="COMP_Codigo" class="form-control">
+</div>
+
+<div class="mb-3">
+  <label for="Id_Trabajador" class="form-label">Id_Trabajador:</label>
+  <input type="number" id="Id_Trabajador" name="Id_Trabajador" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Tipo_trabajador" class="form-label">Tipo_trabajador:</label>
+  <input type="text" id="Tipo_trabajador" name="Tipo_trabajador" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Apellido_Paterno" class="form-label">Apellido_Paterno:</label>
+  <input type="text" id="Apellido_Paterno" name="Apellido_Paterno" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Apellido_Materno" class="form-label">Apellido_Materno:</label>
+  <input type="text" id="Apellido_Materno" name="Apellido_Materno" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Nombres" class="form-label">Nombres:</label>
+  <input type="text" id="Nombres" name="Nombres" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Identificacion" class="form-label">Identificacion:</label>
+  <input type="text" id="Identificacion" name="Identificacion" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Entidad_Bancaria" class="form-label">Entidad_Bancaria:</label>
+  <input type="text" id="Entidad_Bancaria" name="Entidad_Bancaria" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="CarnetIESS" class="form-label">CarnetIESS:</label>
+  <input type="text" id="CarnetIESS" name="CarnetIESS" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Direccion" class="form-label">Direccion:</label>
+  <input type="text" id="Direccion" name="Direccion" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Telefono_Fijo" class="form-label">Telefono_Fijo:</label>
+  <input type="text" id="Telefono_Fijo" name="Telefono_Fijo" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Telefono_Movil" class="form-label">Telefono_Movil:</label>
+  <input type="text" id="Telefono_Movil" name="Telefono_Movil" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Genero" class="form-label">Genero:</label>
+  <input type="text" id="Genero" name="Genero" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Nro_Cuenta_Bancaria" class="form-label">Nro_Cuenta_Bancaria:</label>
+  <input type="text" id="Nro_Cuenta_Bancaria" name="Nro_Cuenta_Bancaria" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Codigo_Categoria_Ocupacion" class="form-label">Codigo_Categoria_Ocupacion:</label>
+  <input type="text" id="Codigo_Categoria_Ocupacion" name="Codigo_Categoria_Ocupacion" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Ocupacion" class="form-label">Ocupacion:</label>
+  <input type="text" id="Ocupacion" name="Ocupacion" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Centro_Costos" class="form-label">Centro_Costos:</label>
+  <input type="text" id="Centro_Costos" name="Centro_Costos" class="form-control">
+</div>
+
+<div class="mb-3">
+  <label for="Nivel_Salarial" class="form-label">Nivel_Salarial:</label>
+  <input type="text" id="Nivel_Salarial" name="Nivel_Salarial" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="EstadoTrabajador" class="form-label">EstadoTrabajador:</label>
+  <input type="text" id="EstadoTrabajador" name="EstadoTrabajador" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Tipo_Contrato" class="form-label">Tipo_Contrato:</label>
+  <input type="text" id="Tipo_Contrato" name="Tipo_Contrato" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Tipo_Cese" class="form-label">Tipo_Cese:</label>
+  <input type="text" id="Tipo_Cese" name="Tipo_Cese" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="EstadoCivil" class="form-label">EstadoCivil:</label>
+  <input type="text" id="EstadoCivil" name="EstadoCivil" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="TipodeComision" class="form-label">TipodeComision:</label>
+  <input type="text" id="TipodeComision" name="TipodeComision" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="FechaNacimiento" class="form-label">FechaNacimiento:</label>
+  <input type="text" id="FechaNacimiento" name="FechaNacimiento" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="FechaIngreso" class="form-label">FechaIngreso:</label>
+  <input type="text" id="FechaIngreso" name="FechaIngreso" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="FechaCese" class="form-label">FechaCese:</label>
+  <input type="text" id="FechaCese" name="FechaCese" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="PeriododeVacaciones" class="form-label">PeriododeVacaciones:</label>
+  <input type="number" id="PeriododeVacaciones" name="PeriododeVacaciones" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="FechaReingreso" class="form-label">FechaReingreso:</label>
+  <input type="text" id="FechaReingreso" name="FechaReingreso" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Fecha_Ult_Actualizacion" class="form-label">Fecha_Ult_Actualizacion:</label>
+  <input type="text" id="Fecha_Ult_Actualizacion" name="Fecha_Ult_Actualizacion" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="EsReingreso" class="form-label">EsReingreso:</label>
+  <input type="text" id="EsReingreso" name="EsReingreso" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Tipo_Cuenta" class="form-label">Tipo_Cuenta:</label>
+  <input type="text" id="Tipo_Cuenta" name="Tipo_Cuenta" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="FormaCalculo13ro" class="form-label">FormaCalculo13ro:</label>
+  <input type="number" id="FormaCalculo13ro" name="FormaCalculo13ro" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="FormaCalculo14ro" class="form-label">FormaCalculo14ro:</label>
+  <input type="number" id="FormaCalculo14ro" name="FormaCalculo14ro" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="BoniComplementaria" class="form-label">BoniComplementaria:</label>
+  <input type="number" id="BoniComplementaria" name="BoniComplementaria" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="BoniEspecial" class="form-label">BoniEspecial:</label>
+  <input type="number" id="BoniEspecial" name="BoniEspecial" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Remuneracion_Minima" class="form-label">Remuneracion_Minima:</label>
+  <input type="number" id="Remuneracion_Minima" name="Remuneracion_Minima" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Fondo_Reserva" class="form-label">Fondo_Reserva:</label>
+  <input type="text" id="Fondo_Reserva" name="Fondo_Reserva" class="form-control" >
+</div>
+
+<div class="mb-3">
+  <label for="Mensaje" class="form-label">Mensaje:</label>
+  <input type="text" id="Mensaje" name="Mensaje" class="form-control">
+</div>
+
+
+      <div style="display: flex; justify-content: space-between;">
+        <button class="btn btn-primary mr-2" (click)="AgregarRegistro(); closeModal();" type="submit">Enviar</button>
+        <button class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+  
+      </div>
+      
+    </form>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="vh-100 vw-100 d-flex justify-content-center align-items-center" style="z-index: 2; position: absolute; color: black;">
+    <div class="bg-white p-4 rounded" style="max-width: 400px;">
+      <h2 class="mb-4">Form Popup</h2>
+      <form (ngSubmit)="submitForm()">
+        <!-- Add your form fields here -->
+        <div class="mb-3">
+          <label for="parametro1" class="form-label">Parámetro 1:</label>
+          <input type="text" id="parametro1" name="parametro1" class="form-control" [(ngModel)]="parametro1" required>
+        </div>
+        <div class="mb-3">
+          <label for="parametro2" class="form-label">Parámetro 2:</label>
+          <input type="text" id="parametro2" name="parametro2" class="form-control" [(ngModel)]="parametro2" required>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <button class="btn btn-primary mr-2" (click)="onInsert(parametro1, parametro2); closeModal();" type="submit">Enviar</button>
+          <button class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

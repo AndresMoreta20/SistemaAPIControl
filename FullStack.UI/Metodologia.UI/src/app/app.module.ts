@@ -20,6 +20,10 @@ import { ModalComponent } from './modal/modal.component';
 import { ModalAlertComponent } from './modal-alert/modal-alert.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { FormPopUpComponent } from './form-pop-up/form-pop-up.component';
+import { FormPopUpTrabajadoresComponent } from './form-pop-up-trabajadores/form-pop-up-trabajadores.component';
+import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
+import { FormEditComponent } from './form-edit/form-edit.component';
+import {CookieService} from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { FormPopUpComponent } from './form-pop-up/form-pop-up.component';
     EditarCostoComponent,
     ModalComponent,
     ModalAlertComponent,
-    FormPopUpComponent
+    FormPopUpComponent,
+    FormPopUpTrabajadoresComponent,
+    TrabajadoresComponent,
+    FormEditComponent
   ],
   imports: [
     FormsModule,  
@@ -44,7 +51,7 @@ import { FormPopUpComponent } from './form-pop-up/form-pop-up.component';
     SweetAlert2Module.forRoot(),
   
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
