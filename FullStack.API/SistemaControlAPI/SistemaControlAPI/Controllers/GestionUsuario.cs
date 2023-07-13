@@ -196,7 +196,7 @@ namespace SistemaControlAPI.Controllers
         }
 
 
-        [HttpGet("Trabajador/Insert")]
+        [HttpPost("Trabajador/Insert")]
         public async Task<string> InsertTrabjador(
             string COMP_Codigo,
             int Id_Trabajador,
@@ -318,7 +318,7 @@ namespace SistemaControlAPI.Controllers
         }
 
 
-        [HttpGet("Trabajador/Update")]
+        [HttpPost("Trabajador/Update")]
         public async Task<string> UpdateTrabajador(
             string COMP_Codigo, 
             int Id_Trabajador, 

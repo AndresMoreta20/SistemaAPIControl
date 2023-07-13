@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import { FormPopUpTrabajadoresComponent } from '../form-pop-up-trabajadores/form-pop-up-trabajadores.component';
 import { forkJoin } from 'rxjs';
 
-
 //******Creacrión Interfaces*************/
 interface TipoTrabajador {
   Codigo: string;
@@ -32,10 +31,21 @@ interface TipoComision {
   Descripcion: string;
 }
 
-interface DecimoTerceroDecimoCuarto {
+// interface DecimoTerceroDecimoCuarto {
+//   Codigo: string;
+//   Descripcion: string;
+// }
+
+interface FormaCalculo13ro {
   Codigo: string;
   Descripcion: string;
 }
+
+interface FormaCalculo14ro {
+  Codigo: string;
+  Descripcion: string;
+}
+
 
 interface FondoReserva {
   Codigo: string;
@@ -131,6 +141,7 @@ export class TrabajadoresComponent {
   BoniComplementaria: number = 0;
   BoniEspecial: number = 0;
   Remuneracion_Minima: number = 0;
+  CuotaCuentaCorriente: number = 0;
   Fondo_Reserva: string = " ";
   Mensaje: string = " ";
 
@@ -169,6 +180,7 @@ export class TrabajadoresComponent {
   boniComplementariaModificado: number = 0;
   boniEspecialModificado: number = 0;
   remuneracion_MinimaModificado: number = 0;
+  cuotaCuentaCorrienteModificado: number = 0;
   fondo_ReservaModificado: string = " ";
   mensajeModificado: string = " ";
 
@@ -224,6 +236,7 @@ export class TrabajadoresComponent {
     this.boniComplementariaModificado = objeto.BoniComplementaria;
     this.boniEspecialModificado = objeto.BoniEspecial;
     this.remuneracion_MinimaModificado = objeto.Remuneracion_Minima;
+    this.cuotaCuentaCorrienteModificado = objeto.CuotaCuentaCorriente;
     this.fondo_ReservaModificado = objeto.Fondo_Reserva;
     this.mensajeModificado = objeto.Mensaje;
   }
@@ -265,6 +278,7 @@ export class TrabajadoresComponent {
     this.boniComplementariaModificado = 0;
     this.boniEspecialModificado = 0;
     this.remuneracion_MinimaModificado = 0;
+    this.cuotaCuentaCorrienteModificado = 0;
     this.fondo_ReservaModificado = '';
     this.mensajeModificado = '';
     this.selectedRowIndex = null; //Hacer que se quite el index donde se abre el form de editar
@@ -282,6 +296,22 @@ export class TrabajadoresComponent {
 
     //this.reemplazarGenero();
     this.unirSolicitudes();
+
+    //Metodos cargar Arrays para Dropdown
+    this.getTipoTrabajadores();
+    this.getGeneros();
+    this.getEstadoTrabajadores();
+    this.getPeriodosVacaciones();
+    this.getTiposComision();
+    this.getFormaCalculo13ro();
+    this.getFormaCalculo14ro();
+    this.getTiposContrato();
+    this.getTipoCese();
+    this.getEstadosCivil();
+    this.getEsReingresoValues();
+    this.getTiposCuenta();
+    this.getCategoriasOcupacional();
+    this.getNivelesSalarial();
   }
 
   onButton() {
@@ -490,6 +520,8 @@ export class TrabajadoresComponent {
       this.replaceEstadoValues();
       this.replacePeriodoVacacionesValues();
       this.replaceTipoComisionValues();
+      this.replaceFormaCalculo13roValues();
+      this.replaceFormaCalculo14roValues();
       this.replaceFondoReservaValues();
       this.replaceTipoContratoValues();
       this.replaceTipoCeseValues();
@@ -498,6 +530,8 @@ export class TrabajadoresComponent {
       this.replaceTipoCuentaValues();
       this.replaceCategoriaOcupacionalValues();
       this.replaceNivelSalarialValues();
+
+
 
     });
   }
@@ -582,6 +616,7 @@ export class TrabajadoresComponent {
       const periodoVacacionesMap: Record<string, string> = {};
 
       response.forEach(item => {
+        //periodoVacacionesMap[item.Codigo] = item.Descripcion;
         periodoVacacionesMap[item.Descripcion] = item.Codigo;
       });
 
@@ -610,21 +645,39 @@ export class TrabajadoresComponent {
     });
   }
 
-  // replaceDecimoTerceroDecimoCuartoValues() {
-  //   this.http.get<TipoComision[]>('https://localhost:7036/api/GestionUsuario/TipoComision').subscribe((response: TipoComision[]) => {
-  //     const tipoComisionMap: Record<string, string> = {};
+  replaceFormaCalculo13roValues() {
+    this.http.get<FormaCalculo13ro[]>('https://localhost:7036/api/GestionUsuario/DecimoTerceroDecimoCuarto').subscribe((response: FormaCalculo13ro[]) => {
+      const formaCalculo13roMap: Record<string, string> = {};
 
-  //     response.forEach(item => {
-  //       tipoComisionMap[item.Descripcion] = item.Codigo;
-  //     });
+      response.forEach(item => {
+        //formaCalculo13roMap[item.Descripcion] = item.Codigo;
+        formaCalculo13roMap[item.Codigo] = item.Descripcion;
+      });
 
-  //     this.arregloObjetos.forEach((trabajador: any) => {
-  //       if (tipoComisionMap.hasOwnProperty(trabajador.TipodeComision)) {
-  //         trabajador.TipodeComision = tipoComisionMap[trabajador.TipodeComision];
-  //       }
-  //     });
-  //   });
-  // }
+      this.arregloObjetos.forEach((trabajador: any) => {
+        if (formaCalculo13roMap.hasOwnProperty(trabajador.FormaCalculo13ro)) {
+          trabajador.FormaCalculo13ro = formaCalculo13roMap[trabajador.FormaCalculo13ro];
+        }
+      });
+    });
+  }
+
+  replaceFormaCalculo14roValues() {
+    this.http.get<FormaCalculo14ro[]>('https://localhost:7036/api/GestionUsuario/DecimoTerceroDecimoCuarto').subscribe((response: FormaCalculo14ro[]) => {
+      const formaCalculo14roMap: Record<string, string> = {};
+
+      response.forEach(item => {
+        //formaCalculo14roMap[item.Descripcion] = item.Codigo;
+        formaCalculo14roMap[item.Codigo] = item.Descripcion;
+      });
+
+      this.arregloObjetos.forEach((trabajador: any) => {
+        if (formaCalculo14roMap.hasOwnProperty(trabajador.FormaCalculo14ro)) {
+          trabajador.FormaCalculo14ro = formaCalculo14roMap[trabajador.FormaCalculo14ro];
+        }
+      });
+    });
+  }
 
   replaceFondoReservaValues() {
     this.http.get<FondoReserva[]>('https://localhost:7036/api/GestionUsuario/FondoReserva').subscribe((response: FondoReserva[]) => {
@@ -765,5 +818,217 @@ export class TrabajadoresComponent {
       });
     });
   }
+
+  //******************APIS para MODIFICAR*************************** */
+  tipoTrabajadores: TipoTrabajador[] = [];
+  getTipoTrabajadores() {
+    const url = 'https://localhost:7036/api/GestionUsuario/TipoTrabajador';
+  
+    this.http.get<TipoTrabajador[]>(url).subscribe(
+      (response) => {
+        this.tipoTrabajadores = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de trabajador:', error);
+      }
+    );
+  }
+
+  generos: Genero[] = [];
+  getGeneros() {
+    const url = 'https://localhost:7036/api/GestionUsuario/Genero';
+  
+    this.http.get<Genero[]>(url).subscribe(
+      (response) => {
+        this.generos = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+
+  estadoTrabajadores: EstadoTrabajador[] = [];
+  getEstadoTrabajadores() {
+    const url = 'https://localhost:7036/api/GestionUsuario/EstadoTrabajador';
+  
+    this.http.get<EstadoTrabajador[]>(url).subscribe(
+      (response) => {
+        this.estadoTrabajadores = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+
+  periodosVacaciones: PeriodoVacaciones[] = [];
+  getPeriodosVacaciones() {
+    const url = 'https://localhost:7036/api/GestionUsuario/PeriodoVacaciones';
+  
+    this.http.get<PeriodoVacaciones[]>(url).subscribe(
+      (response) => {
+        this.periodosVacaciones = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+
+  tiposComision: TipoComision[] = [];
+  getTiposComision() {
+    const url = 'https://localhost:7036/api/GestionUsuario/TipoComision';
+  
+    this.http.get<TipoComision[]>(url).subscribe(
+      (response) => {
+        this.tiposComision = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+
+  formasCalculo13ro: FormaCalculo13ro[] = [];
+  getFormaCalculo13ro() {
+    const url = 'https://localhost:7036/api/GestionUsuario/DecimoTerceroDecimoCuarto';
+  
+    this.http.get<FormaCalculo13ro[]>(url).subscribe(
+      (response) => {
+        this.formasCalculo13ro = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+
+  formasCalculo14ro: FormaCalculo14ro[] = [];
+  getFormaCalculo14ro() {
+    const url = 'https://localhost:7036/api/GestionUsuario/DecimoTerceroDecimoCuarto';
+  
+    this.http.get<FormaCalculo14ro[]>(url).subscribe(
+      (response) => {
+        this.formasCalculo14ro = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+
+  fondosReserva: FondoReserva[] = [];
+  getFondosReserva() {
+    const url = 'https://localhost:7036/api/GestionUsuario/FondoReserva';
+  
+    this.http.get<FondoReserva[]>(url).subscribe(
+      (response) => {
+        this.fondosReserva = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+  
+  tiposContrato: TipoContrato[] = [];
+  getTiposContrato() {
+    const url = 'https://localhost:7036/api/GestionUsuario/TipoContrato';
+  
+    this.http.get<TipoContrato[]>(url).subscribe(
+      (response) => {
+        this.tiposContrato = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+
+  tiposCese: TipoCese[] = [];
+  getTipoCese() {
+    const url = 'https://localhost:7036/api/GestionUsuario/TipoCese';
+  
+    this.http.get<TipoCese[]>(url).subscribe(
+      (response) => {
+        this.tiposCese = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+  
+  estadosCivil: EstadoCivil[] = [];
+  getEstadosCivil() {
+    const url = 'https://localhost:7036/api/GestionUsuario/EstadoCivil';
+  
+    this.http.get<EstadoCivil[]>(url).subscribe(
+      (response) => {
+        this.estadosCivil = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+  
+  esReingresos: EsReingreso[] = [];
+  getEsReingresoValues() {
+    const url = 'https://localhost:7036/api/GestionUsuario/EsReingreso';
+  
+    this.http.get<EsReingreso[]>(url).subscribe(
+      (response) => {
+        this.esReingresos = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+  
+  tiposCuenta: TipoCuenta[] = [];
+  getTiposCuenta() {
+    const url = 'https://localhost:7036/api/GestionUsuario/TipoCuenta';
+  
+    this.http.get<TipoCuenta[]>(url).subscribe(
+      (response) => {
+        this.tiposCuenta = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+  
+  categoriasOcupacional: CategoriaOcupacional[] = [];
+  getCategoriasOcupacional() {
+    const url = 'https://localhost:7036/api/GestionUsuario/CategoriaOcupacional';
+  
+    this.http.get<CategoriaOcupacional[]>(url).subscribe(
+      (response) => {
+        this.categoriasOcupacional = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+  
+  nivelesSalarial: NivelSalarial[] = [];
+  getNivelesSalarial() {
+    const url = 'https://localhost:7036/api/GestionUsuario/NivelSalarial';
+  
+    this.http.get<FondoReserva[]>(url).subscribe(
+      (response) => {
+        this.nivelesSalarial = response;
+      },
+      (error) => {
+        console.error('Error al obtener los tipos de genero:', error);
+      }
+    );
+  }
+  
 
 }

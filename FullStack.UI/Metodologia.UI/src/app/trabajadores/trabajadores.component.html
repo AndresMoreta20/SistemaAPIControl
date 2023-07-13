@@ -134,8 +134,13 @@
                         <h3>Modificar Datos Trabajador</h3>
                         <div>
                             <label for="tipoTrabajador">Nuevo Tipo de Trabajador:</label>
-                            <input type="text" id="tipoTrabajador" [(ngModel)]="tipo_trabajadorModificado" />
+                            <select id="tipoTrabajador" [(ngModel)]="tipo_trabajadorModificado">
+                                <option *ngFor="let tipoTrabajador of tipoTrabajadores" [value]="tipoTrabajador.Codigo">
+                                    {{ tipoTrabajador.Codigo }}
+                                </option>
+                            </select>
                         </div>
+
                         <div>
                             <label for="apellidoPaterno">Nuevo Apellido Paterno:</label>
                             <input type="text" id="apellidoPaterno" [(ngModel)]="apellido_PaternoModificado" />
@@ -174,7 +179,11 @@
                         </div>
                         <div>
                             <label for="genero">Nuevo Género:</label>
-                            <input type="text" id="genero" [(ngModel)]="generoModificado" />
+                            <select id="genero" [(ngModel)]="generoModificado">
+                                <option *ngFor="let genero of generos" [value]="genero.Codigo">
+                                    {{ genero.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="nroCuentaBancaria">Nuevo Número de Cuenta Bancaria:</label>
@@ -182,8 +191,12 @@
                         </div>
                         <div>
                             <label for="codigoCategoriaOcupacion">Nuevo Código de Categoría de Ocupación:</label>
-                            <input type="text" id="codigoCategoriaOcupacion"
-                                [(ngModel)]="codigo_Categoria_OcupacionModificado" />
+                            <select id="codigoCategoriaOcupacion" [(ngModel)]="codigo_Categoria_OcupacionModificado">
+                                <option *ngFor="let categoriaOcupacional of categoriasOcupacional"
+                                    [value]="categoriaOcupacional.Codigo">
+                                    {{ categoriaOcupacional.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="ocupacion">Nueva Ocupación:</label>
@@ -195,27 +208,52 @@
                         </div>
                         <div>
                             <label for="nivelSalarial">Nuevo Nivel Salarial:</label>
-                            <input type="text" id="nivelSalarial" [(ngModel)]="nivel_SalarialModificado" />
+                            <select id="nivelSalarial" [(ngModel)]="nivel_SalarialModificado">
+                                <option *ngFor="let nivelSalarial of nivelesSalarial" [value]="nivelSalarial.Codigo">
+                                    {{ nivelSalarial.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
-                            <label for="estadoTrabajador">Nuevo Estado del Trabajador:</label>
-                            <input type="text" id="estadoTrabajador" [(ngModel)]="estadoTrabajadorModificado" />
+                            <label for="estadoTrabajador">Estado del Trabajador:</label>
+                            <select id="estadoTrabajador" [(ngModel)]="estadoTrabajadorModificado">
+                                <option *ngFor="let estadoTrabajador of estadoTrabajadores"
+                                    [value]="estadoTrabajador.Codigo">
+                                    {{ estadoTrabajador.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="tipoContrato">Nuevo Tipo de Contrato:</label>
-                            <input type="text" id="tipoContrato" [(ngModel)]="tipo_ContratoModificado" />
+                            <select id="tipoContrato" [(ngModel)]="tipo_ContratoModificado">
+                                <option *ngFor="let tipoContrato of tiposContrato" [value]="tipoContrato.Codigo">
+                                    {{ tipoContrato.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="tipoCese">Nuevo Tipo de Cese:</label>
-                            <input type="text" id="tipoCese" [(ngModel)]="tipo_CeseModificado" />
+                            <select id="tipoCese" [(ngModel)]="tipo_CeseModificado">
+                                <option *ngFor="let tipoCese of tiposCese" [value]="tipoCese.Codigo">
+                                    {{ tipoCese.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="estadoCivil">Nuevo Estado Civil:</label>
-                            <input type="text" id="estadoCivil" [(ngModel)]="estadoCivilModificado" />
+                            <select id="estadoCivil" [(ngModel)]="estadoCivilModificado">
+                                <option *ngFor="let estadoCivil of estadosCivil" [value]="estadoCivil.Codigo">
+                                    {{ estadoCivil.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="tipoComision">Nuevo Tipo de Comisión:</label>
-                            <input type="text" id="tipoComision" [(ngModel)]="tipodeComisionModificado" />
+                            <select id="tipoComision" [(ngModel)]="tipodeComisionModificado">
+                                <option *ngFor="let tipoComision of tiposComision" [value]="tipoComision.Codigo">
+                                    {{ tipoComision.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="fechaNacimiento">Nueva Fecha de Nacimiento:</label>
@@ -229,10 +267,17 @@
                             <label for="fechaCese">Nueva Fecha de Cese:</label>
                             <input type="text" id="fechaCese" [(ngModel)]="fechaCeseModificado" />
                         </div>
+
                         <div>
                             <label for="periodoVacaciones">Nuevo Período de Vacaciones:</label>
-                            <input type="number" id="periodoVacaciones" [(ngModel)]="periododeVacacionesModificado" />
+                            <select id="periodoVacaciones" [(ngModel)]="periododeVacacionesModificado">
+                                <option *ngFor="let periodoVacaciones of periodosVacaciones"
+                                    [value]="periodoVacaciones.Codigo">
+                                    {{ periodoVacaciones.Codigo }}
+                                </option>
+                            </select>
                         </div>
+
                         <div>
                             <label for="fechaReingreso">Nueva Fecha de Reingreso:</label>
                             <input type="text" id="fechaReingreso" [(ngModel)]="fechaReingresoModificado" />
@@ -244,19 +289,37 @@
                         </div>
                         <div>
                             <label for="esReingreso">Nuevo Estado de Reingreso:</label>
-                            <input type="text" id="esReingreso" [(ngModel)]="esReingresoModificado" />
+                            <select id="esReingreso" [(ngModel)]="esReingresoModificado">
+                                <option *ngFor="let esReingreso of esReingresos" [value]="esReingreso.Codigo">
+                                    {{ esReingreso.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="tipoCuenta">Nuevo Tipo de Cuenta:</label>
-                            <input type="text" id="tipoCuenta" [(ngModel)]="tipo_CuentaModificado" />
+                            <select id="tipoCuenta" [(ngModel)]="tipo_CuentaModificado">
+                                <option *ngFor="let tipoCuenta of tiposCuenta" [value]="tipoCuenta.Codigo">
+                                    {{ tipoCuenta.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="formaCalculo13ro">Nueva Forma de Cálculo del 13vo Salario:</label>
-                            <input type="number" id="formaCalculo13ro" [(ngModel)]="formaCalculo13roModificado" />
+                            <select id="formaCalculo13ro" [(ngModel)]="formaCalculo13roModificado">
+                                <option *ngFor="let formaCalculo13ro of formasCalculo13ro"
+                                    [value]="formaCalculo13ro.Codigo">
+                                    {{ formaCalculo13ro.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="formaCalculo14ro">Nueva Forma de Cálculo del 14vo Salario:</label>
-                            <input type="number" id="formaCalculo14ro" [(ngModel)]="formaCalculo14roModificado" />
+                            <select id="formaCalculo14ro" [(ngModel)]="formaCalculo14roModificado">
+                                <option *ngFor="let formaCalculo14ro of formasCalculo14ro"
+                                    [value]="formaCalculo14ro.Codigo">
+                                    {{ formaCalculo14ro.Codigo }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="boniComplementaria">Nueva Bonificación Complementaria:</label>
@@ -266,6 +329,8 @@
                             <label for="boniEspecial">Nueva Bonificación Especial:</label>
                             <input type="number" id="boniEspecial" [(ngModel)]="boniEspecialModificado" />
                         </div>
+                        
+
                         <div>
                             <label for="remuneracionMinima">Nueva Remuneración Mínima:</label>
                             <input type="number" id="remuneracionMinima" [(ngModel)]="remuneracion_MinimaModificado" />
