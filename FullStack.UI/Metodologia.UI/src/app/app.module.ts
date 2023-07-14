@@ -24,7 +24,13 @@ import { FormPopUpTrabajadoresComponent } from './form-pop-up-trabajadores/form-
 import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
 import { FormEditComponent } from './form-edit/form-edit.component';
 import {CookieService} from 'ngx-cookie-service';
+<<<<<<< HEAD
 import { CentroPlanillasComponent } from './centro-planillas/centro-planillas.component';
+=======
+import { OperacionesComponent } from './operaciones/operaciones.component';
+import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
+import { CuentasComponent } from './cuentas/cuentas.component';
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
 
 @NgModule({
   declarations: [
@@ -40,7 +46,13 @@ import { CentroPlanillasComponent } from './centro-planillas/centro-planillas.co
     FormPopUpTrabajadoresComponent,
     TrabajadoresComponent,
     FormEditComponent,
+<<<<<<< HEAD
     CentroPlanillasComponent
+=======
+    OperacionesComponent,
+    MantenimientoComponent,
+    CuentasComponent
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
   ],
   imports: [
     FormsModule,  

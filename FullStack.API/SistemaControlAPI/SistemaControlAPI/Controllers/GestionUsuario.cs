@@ -718,14 +718,46 @@ namespace SistemaControlAPI.Controllers
             }
         }
 
+<<<<<<< HEAD
         [HttpGet("MovimientoPlanillaSelect")]
         public async Task<string> GetMovimientoPlanillaSelect()
+=======
+        [HttpGet("PlandeCuentas")]
+        public async Task<string> GetPlandeCuentas()
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
         {
             try
             {
                 using (var httpClient = new HttpClient())
                 {
+<<<<<<< HEAD
                     var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaSelect";
+=======
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/PlandeCuentas";
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+
+        [HttpGet("GestionContableNomina")]
+
+        public async Task<string> GetGestionContableNomina(int sucursal)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/Gestion_Cuenta_Contable_Nomina_Select?sucursal={sucursal}";
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
                     HttpResponseMessage response = await httpClient.GetAsync(url);
                     string responseBody = await response.Content.ReadAsStringAsync();
                     Console.WriteLine(responseBody);
@@ -734,17 +766,30 @@ namespace SistemaControlAPI.Controllers
             }
             catch (Exception error)
             {
+<<<<<<< HEAD
                 return ("error: " + error);
             }
         }
 
         [HttpGet("MovimientoPlanillaUpdate")]
         public async Task<string> UpdateMovimientoPlanilla(int codigoplanilla, int conceptos, int prioridad, int tipooperacion, int cuenta1, int cuenta2, int cuenta3, int cuenta4, int MovimientoExcepcion1, int MovimientoExcepcion2, int MovimientoExcepcion3, int Traba_Aplica_iess, int Traba_Proyecto_imp_renta, int Aplica_Proy_Renta, int Empresa_Afecta_Iess)
+=======
+                return ("erooor: " + error);
+            }
+        }
+
+
+
+
+        [HttpGet("GestionContableNomina/Insert")]
+        public async Task<string> InsertGestionContableNomina(string codigo, string descripcion)
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
         {
             try
             {
                 using (var httpClient = new HttpClient())
                 {
+<<<<<<< HEAD
                     var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaUpdate?codigoplanilla={codigoplanilla}&conceptos={conceptos}&prioridad={prioridad}&tipooperacion={tipooperacion}&cuenta1={cuenta1}&cuenta2={cuenta2}&cuenta3={cuenta3}&cuenta4={cuenta4}&MovimientoExcepcion1={MovimientoExcepcion1}&MovimientoExcepcion2={MovimientoExcepcion2}&MovimientoExcepcion3={MovimientoExcepcion3}&Traba_Aplica_iess={Traba_Aplica_iess}&Traba_Proyecto_imp_renta={Traba_Proyecto_imp_renta}&Aplica_Proy_Renta={Aplica_Proy_Renta}&Empresa_Afecta_Iess={Empresa_Afecta_Iess}";
                     HttpResponseMessage response = await httpClient.GetAsync(url);
                     string responseBody = await response.Content.ReadAsStringAsync();
@@ -811,34 +856,87 @@ namespace SistemaControlAPI.Controllers
 
                     HttpResponseMessage response = await httpClient.GetAsync(url);
                     string responseBody = await response.Content.ReadAsStringAsync();
+=======
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosInsert?codigocentrocostos={codigo}&descripcioncentrocostos={descripcion}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
                     Console.WriteLine(responseBody);
                     return responseBody;
                 }
             }
             catch (Exception error)
             {
+<<<<<<< HEAD
                 return ("error: " + error);
             }
         }
 
         [HttpGet("MovimientoPlanillaSearch")]
         public async Task<string> SearchMovimientoPlanilla(int Concepto)
+=======
+                return ("Error: " + error);
+            }
+        }
+
+        [HttpGet("GestionContableNomina/Delete")]
+        public async Task<string> DeleteGestionContableNomina(string codigo, string descripcion)
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
         {
             try
             {
                 using (var httpClient = new HttpClient())
                 {
+<<<<<<< HEAD
                     var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaSearch?Concepto={Concepto}";
 
                     HttpResponseMessage response = await httpClient.GetAsync(url);
                     string responseBody = await response.Content.ReadAsStringAsync();
+=======
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosDelete?codigocentrocostos={codigo}&descripcioncentrocostos={descripcion}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
                     Console.WriteLine(responseBody);
                     return responseBody;
                 }
             }
             catch (Exception error)
             {
+<<<<<<< HEAD
                 return ("error: " + error);
+=======
+                return ("Error: " + error);
+            }
+        }
+
+        [HttpGet("GestionContableNomina/Search")]
+        public async Task<string> SearchGestionContableNomina(string descripcioncentrocostos)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosSearch?descripcioncentrocostos={descripcioncentrocostos}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("Error: " + error);
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
             }
         }
 

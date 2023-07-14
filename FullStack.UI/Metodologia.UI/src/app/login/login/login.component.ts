@@ -88,7 +88,7 @@ export class LoginComponent {
           this.storeData();
           this.retrieveData();
           this.sharedService.emisorCodigo = this.emisor.Codigo;
-          this.router.navigate(['/trabajadores']);
+          this.router.navigate(['/inicio']);
 
         }
       } catch (error) {

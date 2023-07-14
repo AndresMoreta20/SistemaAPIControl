@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "er7C+vOU+6mrLwTOs21tdALK/wbc3sIdThEZg2Palap9hUWnE9hEy3Z72Xh2+YHRrQ1UPdT4KoDpXuCYI16Ctw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Andy\\Documents\\ing-software\\software6\\metodologia\\Proyecto19Abril\\proyecto\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj",
+=======
+  "dgSpecHash": "Sidd3euQ3ic61MemQ34qMqtr6o69Hvi8+iMBGqx6DyL8Ygabjbd3O/6G49FCwE2OYWaJsY+3LyBl6nP5xPVWIw==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj",
+>>>>>>> 5f1c086a545b8eb16d1715a84d5d3711098dc098
   "expectedPackageFiles": [
     "C:\\Users\\Andy\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Andy\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
