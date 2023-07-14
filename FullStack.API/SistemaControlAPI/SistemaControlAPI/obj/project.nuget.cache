@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sidd3euQ3ic61MemQ34qMqtr6o69Hvi8+iMBGqx6DyL8Ygabjbd3O/6G49FCwE2OYWaJsY+3LyBl6nP5xPVWIw==",
+  "dgSpecHash": "0loRBruZ44YCxmvEPTvwh4MSigDrLavPDT641ZEE9NKd8UYkAsjLA7DB9HfkEWA4VlAFCb6Qph7vzYxsPnmhBg==",
   "success": true,
-  "projectFilePath": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj",
+  "projectFilePath": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\Andres\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sebas\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Sebas\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
@@ -11,5 +11,12 @@
     "C:\\Users\\Sebas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\Sebas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\Andres\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
