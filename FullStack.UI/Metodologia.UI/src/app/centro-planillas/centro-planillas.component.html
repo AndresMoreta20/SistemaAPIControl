@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="container">
+  <h2>Planilla</h2>
+<!--
+  <div class="row mb-3">
+    <div class="col">
+      <button class="btn btn-primary" (click)="insertarPlanilla(conceptos, prioridad, tipooperacion, cuenta1, cuenta2, cuenta3, cuenta4, MovimientoExcepcion1, MovimientoExcepcion2, MovimientoExcepcion3, Traba_Aplica_iess, Traba_Proyecto_imp_renta, Aplica_Proy_Renta, Empresa_Afecta_Iess)">Insertar Planilla</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary" (click)="buscarPlanilla(Concepto)">Buscar Planilla</button>
+    </div>
+  </div>
+-->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Conceptos</th>
+        <th>Prioridad</th>
+        <th>Tipo de Operación</th>
+        <th>Cuenta 1</th>
+        <th>Cuenta 2</th>
+        <th>Cuenta 3</th>
+        <th>Cuenta 4</th>
+        <th>Movimiento Excepción 1</th>
+        <th>Movimiento Excepción 2</th>
+        <th>Movimiento Excepción 3</th>
+        <th>Traba Aplica IESS</th>
+        <th>Traba Proyecto Imp Renta</th>
+        <th>Aplica Proy Renta</th>
+        <th>Empresa Afecta IESS</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let planilla of planillas">
+        <td>{{ planilla.codigoplanilla }}</td>
+        <td>{{ planilla.conceptos }}</td>
+        <td>{{ planilla.prioridad }}</td>
+        <td>{{ planilla.tipooperacion }}</td>
+        <td>{{ planilla.cuenta1 }}</td>
+        <td>{{ planilla.cuenta2 }}</td>
+        <td>{{ planilla.cuenta3 }}</td>
+        <td>{{ planilla.cuenta4 }}</td>
+        <td>{{ planilla.MovimientoExcepcion1 }}</td>
+        <td>{{ planilla.MovimientoExcepcion2 }}</td>
+        <td>{{ planilla.MovimientoExcepcion3 }}</td>
+        <td>{{ planilla.Traba_Aplica_iess }}</td>
+        <td>{{ planilla.Traba_Proyecto_imp_renta }}</td>
+        <td>{{ planilla.Aplica_Proy_Renta }}</td>
+        <td>{{ planilla.Empresa_Afecta_Iess }}</td>
+        <td>
+          <button class="btn btn-link" (click)="actualizarPlanilla(planilla)">Actualizar</button>
+          <button class="btn btn-link" (click)="eliminarPlanilla(planilla.codigomovimiento, planilla.descripcionomovimiento)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

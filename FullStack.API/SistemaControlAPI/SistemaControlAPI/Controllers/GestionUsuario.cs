@@ -718,6 +718,130 @@ namespace SistemaControlAPI.Controllers
             }
         }
 
+        [HttpGet("MovimientoPlanillaSelect")]
+        public async Task<string> GetMovimientoPlanillaSelect()
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaSelect";
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("error: " + error);
+            }
+        }
+
+        [HttpGet("MovimientoPlanillaUpdate")]
+        public async Task<string> UpdateMovimientoPlanilla(int codigoplanilla, int conceptos, int prioridad, int tipooperacion, int cuenta1, int cuenta2, int cuenta3, int cuenta4, int MovimientoExcepcion1, int MovimientoExcepcion2, int MovimientoExcepcion3, int Traba_Aplica_iess, int Traba_Proyecto_imp_renta, int Aplica_Proy_Renta, int Empresa_Afecta_Iess)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaUpdate?codigoplanilla={codigoplanilla}&conceptos={conceptos}&prioridad={prioridad}&tipooperacion={tipooperacion}&cuenta1={cuenta1}&cuenta2={cuenta2}&cuenta3={cuenta3}&cuenta4={cuenta4}&MovimientoExcepcion1={MovimientoExcepcion1}&MovimientoExcepcion2={MovimientoExcepcion2}&MovimientoExcepcion3={MovimientoExcepcion3}&Traba_Aplica_iess={Traba_Aplica_iess}&Traba_Proyecto_imp_renta={Traba_Proyecto_imp_renta}&Aplica_Proy_Renta={Aplica_Proy_Renta}&Empresa_Afecta_Iess={Empresa_Afecta_Iess}";
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("error: " + error);
+            }
+        }
+
+        [HttpPost("MovimientoPlanillaInsert")]
+        public async Task<string> InsertMovimientoPlanilla(int conceptos, int prioridad, int tipooperacion, int cuenta1, int cuenta2, int cuenta3, int cuenta4, int MovimientoExcepcion1, int MovimientoExcepcion2, int MovimientoExcepcion3, int Traba_Aplica_iess, int Traba_Proyecto_imp_renta, int Aplica_Proy_Renta, int Empresa_Afecta_Iess)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaInsert";
+
+                    var parameters = new Dictionary<string, string>
+            {
+                { "conceptos", conceptos.ToString() },
+                { "prioridad", prioridad.ToString() },
+                { "tipooperacion", tipooperacion.ToString() },
+                { "cuenta1", cuenta1.ToString() },
+                { "cuenta2", cuenta2.ToString() },
+                { "cuenta3", cuenta3.ToString() },
+                { "cuenta4", cuenta4.ToString() },
+                { "MovimientoExcepcion1", MovimientoExcepcion1.ToString() },
+                { "MovimientoExcepcion2", MovimientoExcepcion2.ToString() },
+                { "MovimientoExcepcion3", MovimientoExcepcion3.ToString() },
+                { "Traba_Aplica_iess", Traba_Aplica_iess.ToString() },
+                { "Traba_Proyecto_imp_renta", Traba_Proyecto_imp_renta.ToString() },
+                { "Aplica_Proy_Renta", Aplica_Proy_Renta.ToString() },
+                { "Empresa_Afecta_Iess", Empresa_Afecta_Iess.ToString() }
+            };
+
+                    var content = new FormUrlEncodedContent(parameters);
+
+                    HttpResponseMessage response = await httpClient.PostAsync(url, content);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("error: " + error);
+            }
+        }
+
+
+        [HttpGet("MovimeintoPlanillaDelete")]
+        public async Task<string> DeleteMovimeintoPlanilla(int codigomovimiento, string descripcionomovimiento)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimeintoPlanillaDelete?codigomovimiento={codigomovimiento}&descripcionomovimiento={descripcionomovimiento}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("error: " + error);
+            }
+        }
+
+        [HttpGet("MovimientoPlanillaSearch")]
+        public async Task<string> SearchMovimientoPlanilla(int Concepto)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/MovimientoPlanillaSearch?Concepto={Concepto}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("error: " + error);
+            }
+        }
+
 
     }
 }

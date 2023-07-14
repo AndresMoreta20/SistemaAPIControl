@@ -24,6 +24,7 @@ import { FormPopUpTrabajadoresComponent } from './form-pop-up-trabajadores/form-
 import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
 import { FormEditComponent } from './form-edit/form-edit.component';
 import {CookieService} from 'ngx-cookie-service';
+import { CentroPlanillasComponent } from './centro-planillas/centro-planillas.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {CookieService} from 'ngx-cookie-service';
     FormPopUpComponent,
     FormPopUpTrabajadoresComponent,
     TrabajadoresComponent,
-    FormEditComponent
+    FormEditComponent,
+    CentroPlanillasComponent
   ],
   imports: [
     FormsModule,  
