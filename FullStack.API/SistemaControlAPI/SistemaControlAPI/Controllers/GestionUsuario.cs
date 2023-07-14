@@ -718,6 +718,121 @@ namespace SistemaControlAPI.Controllers
             }
         }
 
+        [HttpGet("PlandeCuentas")]
+        public async Task<string> GetPlandeCuentas()
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = "http://apiservicios.ecuasolmovsa.com:3009/api/Varios/PlandeCuentas";
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+
+        [HttpGet("GestionContableNomina")]
+
+        public async Task<string> GetGestionContableNomina(int sucursal)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/Gestion_Cuenta_Contable_Nomina_Select?sucursal={sucursal}";
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("erooor: " + error);
+            }
+        }
+
+
+
+
+        [HttpGet("GestionContableNomina/Insert")]
+        public async Task<string> InsertGestionContableNomina(string codigo, string descripcion)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosInsert?codigocentrocostos={codigo}&descripcioncentrocostos={descripcion}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("Error: " + error);
+            }
+        }
+
+        [HttpGet("GestionContableNomina/Delete")]
+        public async Task<string> DeleteGestionContableNomina(string codigo, string descripcion)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosDelete?codigocentrocostos={codigo}&descripcioncentrocostos={descripcion}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("Error: " + error);
+            }
+        }
+
+        [HttpGet("GestionContableNomina/Search")]
+        public async Task<string> SearchGestionContableNomina(string descripcioncentrocostos)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var url = $"http://apiservicios.ecuasolmovsa.com:3009/api/Varios/CentroCostosSearch?descripcioncentrocostos={descripcioncentrocostos}";
+
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                    return responseBody;
+                }
+            }
+            catch (Exception error)
+            {
+                return ("Error: " + error);
+            }
+        }
+
 
     }
 }

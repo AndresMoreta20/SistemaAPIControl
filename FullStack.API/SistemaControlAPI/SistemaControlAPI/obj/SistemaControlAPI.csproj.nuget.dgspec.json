@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 14\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj": {}
+    "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 14\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj": {
+    "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 14\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj",
+        "projectUniqueName": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj",
         "projectName": "SistemaControlAPI",
-        "projectPath": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 14\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj",
+        "projectPath": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\SistemaControlAPI.csproj",
         "packagesPath": "C:\\Users\\Sebas\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 14\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\obj\\",
+        "outputPath": "D:\\Users\\Sebas\\Documents\\Udla\\Sexto semestre\\Modelado de Software\\Semana 16\\FullStack.API\\SistemaControlAPI\\SistemaControlAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

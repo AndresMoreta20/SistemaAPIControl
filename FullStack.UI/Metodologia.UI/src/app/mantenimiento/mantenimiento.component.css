@@ -1,0 +1,67 @@
+body {
+    background-color: #f8f8f878; /* Color de fondo deseado */
+    padding: 20px; /* Espaciado interno para separar los elementos de la pantalla */
+  }
+  
+.tabla-nombre-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tabla-nombre {
+    cursor: pointer;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-align: center;
+  }
+  
+  .tabla-nombre:hover {
+    color: #b8002e; /* Puedes cambiar el color al pasar el mouse */
+  }
+  
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #e9e9e9;
+  }
+  
+  h2 {
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  h2:hover {
+    text-decoration: underline;
+  }
+  
+
+  .tabla-celda {
+    width: 150px; /* Establece el ancho deseado */
+    text-align: center; /* Alineación horizontal (centrado) */
+    vertical-align: top; /* Alineación vertical (top, middle, bottom) */
+  }
+  

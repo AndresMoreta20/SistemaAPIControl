@@ -578,7 +578,8 @@ export class TrabajadoresComponent {
 
       // Mapear los valores del JSON a generoMap
       response.forEach(item => {
-        generoMap[item.Descripcion] = item.Codigo;
+        //generoMap[item.Descripcion] = item.Codigo;
+        generoMap[item.Codigo] = item.Descripcion;
       });
 
       this.arregloObjetos.forEach((trabajador: any) => {
@@ -650,8 +651,8 @@ export class TrabajadoresComponent {
       const formaCalculo13roMap: Record<string, string> = {};
 
       response.forEach(item => {
-        //formaCalculo13roMap[item.Descripcion] = item.Codigo;
-        formaCalculo13roMap[item.Codigo] = item.Descripcion;
+        formaCalculo13roMap[item.Descripcion] = item.Codigo;
+        //formaCalculo13roMap[item.Codigo] = item.Descripcion;
       });
 
       this.arregloObjetos.forEach((trabajador: any) => {
@@ -667,8 +668,8 @@ export class TrabajadoresComponent {
       const formaCalculo14roMap: Record<string, string> = {};
 
       response.forEach(item => {
-        //formaCalculo14roMap[item.Descripcion] = item.Codigo;
-        formaCalculo14roMap[item.Codigo] = item.Descripcion;
+        formaCalculo14roMap[item.Descripcion] = item.Codigo;
+        //formaCalculo14roMap[item.Codigo] = item.Descripcion;
       });
 
       this.arregloObjetos.forEach((trabajador: any) => {
@@ -684,7 +685,8 @@ export class TrabajadoresComponent {
       const fondoReservaMap: Record<string, string> = {};
 
       response.forEach(item => {
-        fondoReservaMap[item.Codigo] = item.Descripcion;
+        //fondoReservaMap[item.Codigo] = item.Descripcion;
+        fondoReservaMap[item.Descripcion] = item.Codigo;
       });
 
       this.arregloObjetos.forEach((trabajador: any) => {
@@ -790,8 +792,8 @@ export class TrabajadoresComponent {
       const categoriaOcupacionalMap: Record<string, string> = {};
 
       response.forEach(item => {
-        //categoriaOcupacionalMap[item.Descripcion] = item.Codigo;
-        categoriaOcupacionalMap[item.Codigo] = item.Descripcion;
+        categoriaOcupacionalMap[item.Descripcion] = item.Codigo;
+        //categoriaOcupacionalMap[item.Codigo] = item.Descripcion;
       });
 
       this.arregloObjetos.forEach((trabajador: any) => {
@@ -807,8 +809,8 @@ export class TrabajadoresComponent {
       const nivelSalarialMap: Record<string, string> = {};
 
       response.forEach(item => {
-        //tipoCuentaMap[item.Descripcion] = item.Codigo;
-        nivelSalarialMap[item.Codigo] = item.Descripcion;
+        nivelSalarialMap[item.Descripcion] = item.Codigo;
+        //nivelSalarialMap[item.Codigo] = item.Descripcion;
       });
 
       this.arregloObjetos.forEach((trabajador: any) => {
