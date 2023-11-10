@@ -1,0 +1,50 @@
+<app-header></app-header>
+<button (click)="generarArchivoCSV()">Exportar a Excel</button>
+<div class="container">
+  <h2>Planilla</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Conceptos</th>
+        <th>Prioridad</th>
+        <th>Tipo de Operación</th>
+        <th>Cuenta 1</th>
+        <th>Cuenta 2</th>
+        <th>Cuenta 3</th>
+        <th>Cuenta 4</th>
+        <th>Movimiento Excepción 1</th>
+        <th>Movimiento Excepción 2</th>
+        <th>Movimiento Excepción 3</th>
+        <th>Traba Aplica IESS</th>
+        <th>Traba Proyecto Imp Renta</th>
+        <th>Empresa Afecta IESS</th>
+        <th>Mensaje</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let planilla of planillas">
+        <td>{{ planilla.CodigoConcepto }}</td>
+        <td>{{ planilla.Concepto }}</td>
+        <td>{{ planilla.Prioridad }}</td>
+        <td>{{ planilla.TipoOperacion }}</td>
+        <td>{{ planilla.Cuenta1 }}</td>
+        <td>{{ planilla.Cuenta2 }}</td>
+        <td>{{ planilla.Cuenta3 }}</td>
+        <td>{{ planilla.Cuenta4 }}</td>
+        <td>{{ planilla.MovimientoExcepcion1 }}</td>
+        <td>{{ planilla.MovimientoExcepcion2 }}</td>
+        <td>{{ planilla.MovimientoExcepcion3 }}</td>
+        <td>{{ planilla.Aplica_iess }}</td>
+        <td>{{ planilla.Aplica_imp_renta }}</td>
+        <td>{{ planilla.Empresa_Afecta_Iess }}</td>
+        <td>{{ planilla.Mensaje }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="actualizarPlanilla(planilla)">Actualizar</button>
+          <button class="btn btn-danger btn-sm" (click)="eliminarPlanilla(planilla.codigomovimiento, planilla.descripcionomovimiento)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

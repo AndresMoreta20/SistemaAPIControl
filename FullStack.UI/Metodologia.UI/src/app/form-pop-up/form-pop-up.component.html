@@ -8,10 +8,16 @@
         <input type="text" id="codigo" name="codigo" class="form-control" [(ngModel)]="formData.codigo" required>
       </div>
       <div class="mb-3">
-        <label for="descripcion" class="form-label">Descripción:</label>
+        <label for="descripcion" class="form-label">Nombre:</label>
         <input type="text" id="descripcion" name="descripcion" class="form-control" [(ngModel)]="formData.descripcion" required>
       </div>
-      <button class="btn btn-primary" (click)="onInsert(); closeModal();" type="submit">Enviar</button>
+      <div style="display: flex; justify-content: space-between;">
+        <!-- <button class="btn btn-primary mr-2" (click)="onInsert(); closeModal();" type="submit">Enviar</button> -->
+        <button class="btn btn-primary mr-2" (click)="submitForm(); closeModal();" type="submit">Enviar</button>
+        <button class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+  
+      </div>
+      
     </form>
   </div>
 </div>

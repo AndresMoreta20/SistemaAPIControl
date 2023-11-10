@@ -1,0 +1,4 @@
+ng serve ---- Inicia la ejecucion
+
+user:5004
+pass:5004U

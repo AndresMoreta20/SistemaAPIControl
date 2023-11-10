@@ -1,0 +1,54 @@
+<app-header></app-header>
+<body>
+    <h1>Hola Bienvenido a Operaciones!</h1>
+    <div class="container">
+        <ul class="cards">
+            <li class="cards__item">
+                <div class="card">
+                    <div class="card__image card__image--costos"></div>
+                    <div class="card__content">
+                        <div class="card__title">Centro de Costos</div>
+                        <p class="card__text">Lista el centro de costos con sus atributos</p>
+                        <button (click)="goToListCostos()" class="btn btn--block card__btn">Listar Costos</button>
+                    </div>
+                </div>
+            </li>
+        
+        
+            <li class="cards__item">
+                <div class="card">
+                    <div class="card__image card__image--planillas"></div>
+                    <div class="card__content">
+                        <div class="card__title">Movimiento Planillas</div>
+                        <p class="card__text">Lista las planillas con sus atributos</p>
+                        <button (click)="goToListPlanillas()" class="btn btn--block card__btn">Listar Planillas</button>
+                    </div>
+                </div>
+            </li>
+        
+        
+            <li class="cards__item">
+                <div class="card">
+                    <div class="card__image card__image--trabajadores"></div>
+                    <div class="card__content">
+                        <div class="card__title">Trabajadores</div>
+                        <p class="card__text">Lista los trabajadores con sus atributos</p>
+                        <button (click)="goToListTrabajadores()"  class="btn btn--block card__btn">Listar Trabajadores</button>
+                    </div>
+                </div>
+            </li>
+        
+        
+            <li class="cards__item">
+                <div class="card">
+                    <div class="card__image card__image--cuentas"></div>
+                    <div class="card__content">
+                        <div class="card__title">Gestión Contable</div>
+                        <p class="card__text">Lista Gestión Contable con sus atributos</p>
+                        <button (click)="goToListCuentas()" class="btn btn--block card__btn">Listar Gestión</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>

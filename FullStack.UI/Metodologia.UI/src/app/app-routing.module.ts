@@ -4,6 +4,11 @@ import { LoginComponent } from './login/login/login.component';
 import { InicioComponent } from './inicio/inicio/inicio.component';
 import { CentroCostosComponent } from './centro-costos/centro-costos.component';
 import { EditarCostoComponent } from './editar-costo/editar-costo.component';
+import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
+import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
+import { OperacionesComponent } from './operaciones/operaciones.component';
+import { CuentasComponent } from './cuentas/cuentas.component';
+import { CentroPlanillasComponent } from './centro-planillas/centro-planillas.component';
 
 const routes: Routes = [
   {
@@ -20,6 +25,21 @@ const routes: Routes = [
   },
   {
     path: 'editar', component:EditarCostoComponent
+  },
+  {
+    path: 'trabajadores', component:TrabajadoresComponent
+  },
+  {
+    path: 'mantenimiento', component:MantenimientoComponent
+  },
+  {
+    path: 'operaciones', component:OperacionesComponent
+  },
+  {
+    path: 'cuentas', component:CuentasComponent
+  },
+  {
+    path: 'planillas', component:CentroPlanillasComponent
   }
 
 ];

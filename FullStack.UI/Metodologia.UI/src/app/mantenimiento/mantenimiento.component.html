@@ -1,0 +1,41 @@
+<app-header></app-header>
+<body>
+  <button (click)="generarArchivoCSV()">Exportar a Excel</button>
+
+  <div *ngFor="let tabla of tablas">
+    <h2 class="tabla-nombre" (click)="mostrarAtributos(tabla)">{{ tabla.nombre }}</h2>
+    <table id="Funciona" *ngIf="tabla.mostrarAtributos">
+      <tr>
+        <th class="tabla-celda">Codigo</th>
+        <th class="tabla-celda">Descripcion</th>
+      </tr>
+      <tr *ngFor="let dato of tabla.datos">
+        <td class="tabla-celda">{{ dato.Codigo }}</td>
+        <td class="tabla-celda">{{ dato.Descripcion }}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngFor="let tabla of tablaPlan">
+    <h2 class="tabla-nombre" (click)="mostrarAtributos(tabla)">{{ tabla.nombre }}</h2>
+    <table *ngIf="tabla.mostrarAtributos">
+      <tr>
+        <th class="tabla-celda">CodigoTipoCuenta</th>
+        <th class="tabla-celda">Cuenta</th>
+        <th class="tabla-celda">CuentaCaracter</th>
+        <th class="tabla-celda">DescripcionCuenta</th>
+        <th class="tabla-celda">Auxiliar_Controla_Cuenta</th>
+        <th class="tabla-celda">Estado</th>
+      </tr>
+      <tr *ngFor="let dato of tabla.datos">
+        <td class="tabla-celda">{{ dato.CodigoTipoCuenta }}</td>
+        <td class="tabla-celda">{{ dato.Cuenta }}</td>
+        <td class="tabla-celda">{{ dato.CuentaCaracter }}</td>
+        <td class="tabla-celda">{{ dato.DescripcionCuenta }}</td>
+        <td class="tabla-celda">{{ dato.Auxiliar_Controla_Cuenta }}</td>
+        <td class="tabla-celda">{{ dato.Estado }}</td>
+      </tr>
+    </table>
+  </div>
+  
+</body>
+

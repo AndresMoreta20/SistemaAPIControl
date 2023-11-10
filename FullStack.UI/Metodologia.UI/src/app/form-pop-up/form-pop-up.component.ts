@@ -26,22 +26,25 @@ export class FormPopUpComponent {
   
   constructor(private http: HttpClient){}
   
+  // Hacer post y pasarlo como formData
   onInsert(){
     const url = 'https://localhost:7036/api/GestionUsuario/Costos/Insert?codigo=' + this.formData.codigo + '&descripcion=' + this.formData.descripcion;
+    console.log(url)
 
     this.http.get(url).subscribe(async (response) => {
+      console.log(response)
 
       this.res = response;
      
       this.res = this.res[0];
       location.reload();
-
-
     });
   }
+  
   submitForm() {
     // Handle form submission logic here
     console.log('Form submitted:', this.formData);
+    this.onInsert(); // Call onInsert here
     // You can close the form popup here if needed
   }
 }
